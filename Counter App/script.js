@@ -1,5 +1,5 @@
 let count = 0;
-// let savedNum;
+let savedNum;
 
 const num = document.getElementById('num');
 const decrementBtn = document.getElementById('decrementBtn');
@@ -24,17 +24,17 @@ function resetFunc() {
 }
 
 function saveFunc() {
-    // savedNum = count;
+    savedNum = count;
     localStorage.setItem('count', count);
 }
 
 function loadFunc() {
-    // num.innerText = savedNum;
-    let saved = localStorage.getItem('count');
-    if (saved !== null) {
-        count = Number(saved);
-    }
-    num.innerText = count;
+    num.innerText = savedNum;
+    // let saved = localStorage.getItem('count');
+    // if (saved !== null) {
+    //     count = Number(saved);
+    // }
+    // num.innerText = count;
 }
 
 // --------------------------------------------------------
