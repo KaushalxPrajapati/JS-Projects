@@ -1,5 +1,5 @@
 let count = 0;
-let savedNum;
+// let savedNum;
 
 const num = document.getElementById('num');
 const decrementBtn = document.getElementById('decrementBtn');
@@ -19,16 +19,27 @@ function decrementFunc() {
 }
 
 function resetFunc() {
-    num.innerText = 0;
+    count = 0;
+    num.innerText = count;
 }
 
 function saveFunc() {
-    savedNum = count;
+    // savedNum = count;
+    localStorage.setItem('count', count);
 }
 
 function loadFunc() {
-    num.innerText = savedNum;
+    // num.innerText = savedNum;
+    let saved = localStorage.getItem('count');
+    if (saved !== null) {
+        count = Number(saved);
+    }
+    num.innerText = count;
 }
+
+// --------------------------------------------------------
+// Event listener for each button
+// --------------------------------------------------------
 
 incrementBtn.addEventListener('click', () => {
     incrementFunc();
@@ -46,6 +57,6 @@ saveBtn.addEventListener('click', () => {
     saveFunc();
 });
 
-saveBtn.addEventListener('click', () => {
+loadBtn.addEventListener('click', () => {
     loadFunc();
 });
