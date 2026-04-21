@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    height: 400px;
+    width: 400px;
+
+    border: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2em;
+}
+
+#input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    font-size: 1.25em;
+}
+
+.input-field,
+.option-field {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.input-field label,
+.option-field label {
+    min-width: 100px;
+}
+
+.input-field input {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+.option-field select {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+button {
+    background-color: rgb(58, 176, 235);
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 0.75em 3em;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(91, 195, 246);
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.overlay.show {
+    display: flex;
+}
+
+#modal-box {
+    width: 400px;
+
+    background: white;
+
+    border: 1px solid black;
+    border-radius: 1em;
+
+    padding: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+
+    position: relative;
+
+    top: 30px;
+}
+
+#closeBtn {
+    background: none;
+    color: black;
+
+    padding: 0;
+
+    border: none;
+
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
+#modal-box h3 {
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.ok-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Class Work</title>
+	<link rel="stylesheet" href="../CSS/Form.css">
+	<link rel="stylesheet" href="../CSS/Popup.css">
+</head>
+
+<body>
+	<form id="container" method="get">
+
+		<div id="input-fields">
+			<div class="input-field">
+				<label for="productId">Product Id</label>
+				<input type="text" id="productId">
+			</div>
+
+			<div class="input-field">
+				<label for="name">Name</label>
+				<input type="text" id="name">
+			</div>
+
+			<div class="input-field">
+				<label for="price">Price</label>
+				<input type="number" id="price">
+			</div>
+
+			<div class="option-field">
+				<label for="city">Shipped To</label>
+				<select name="city" id="city">
+					<option value="null" selected><i>Select City</i></option>
+					<option value="Mumbai">Mumbai</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Kolkata">Kolkata</option>
+					<option value="Chennai">Chennai</option>
+					<option value="Jamshedpur">Jamshedpur</option>
+					<option value="Ranchi">Ranchi</option>
+				</select>
+			</div>
+
+		</div>
+
+		<div class="btn-container">
+			<button type="button" id="openBtn">Submit</button>
+		</div>
+
+	</form>
+
+	<!-- Basic modal popup structure -->
+	<div id="modal" class="overlay">
+		<div id="modal-box">
+			<button id="closeBtn">x</button>
+
+			<h3>Hello!</h3>
+
+			<p>This is a modal popup.</p>
+		</div>
+	</div>
+
+	<!-- <button id="openBtn">Open Modal</button> -->
+
+	<script src="../JS/Form-Popup.js"></script>
+
+</body>
+
+</html>
