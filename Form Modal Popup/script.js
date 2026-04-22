@@ -1,29 +1,25 @@
 const openBtn = document.getElementById('openBtn');
-
 const closeBtn = document.getElementById('closeBtn');
 
-const okBtn = document.getElementById('okBtn');
-
-const modal = document.getElementById('modal');
-
 const productId = document.getElementById('productId');
-const nameField = document.getElementById('name');
+const productName = document.getElementById('name'); // fix: 'name' shadows window.name
 const price = document.getElementById('price');
 const city = document.getElementById('city');
+
+const modal = document.getElementById('modal');
 
 const modalProductId = document.getElementById('modalProductId');
 const modalName = document.getElementById('modalName');
 const modalPrice = document.getElementById('modalPrice');
 const modalCity = document.getElementById('modalCity');
 
-openBtn.addEventListener('click', function () {
-    modalProductId.textContent = 'Product Id : ' + productId.value;
+const okBtn = document.getElementById('okBtn');
 
-    modalName.textContent = 'Name : ' + nameField.value;
-
-    modalPrice.textContent = 'Price : ' + price.value;
-
-    modalCity.textContent = 'Shipped To : ' + city.value;
+openBtn.addEventListener('click', () => {
+    modalProductId.innerHTML = `<span>Product Id: </span><span>${productId.value}</span>`;
+    modalName.innerHTML = `<span>Name: </span><span>${productName.value}</span>`;
+    modalPrice.innerHTML = `<span>Price: </span><span>${price.value}</span>`;
+    modalCity.innerHTML = `<span>Shipped To: </span><span>${city.value}</span>`;
 
     modal.classList.add('show');
 });
@@ -36,13 +32,13 @@ closeBtn.addEventListener('click', closeModal);
 
 okBtn.addEventListener('click', closeModal);
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         closeModal();
     }
 });
 
-modal.addEventListener('click', function (event) {
+modal.addEventListener('click', (event) => {
     if (event.target === modal) {
         closeModal();
     }

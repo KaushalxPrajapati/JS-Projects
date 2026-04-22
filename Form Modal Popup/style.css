@@ -17,28 +17,31 @@ body {
     width: 400px;
 
     border: 2px solid black;
+    border-radius: 20px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     gap: 2em;
 }
 
 #input-fields {
     display: flex;
     flex-direction: column;
-    gap: 2em;
-
+    gap: 1.75em;
     font-size: 1.25em;
+
+    margin-top: 0.75em;
 }
 
 .input-field,
 .option-field {
     display: flex;
-    justify-content: space-between;
-    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    text-align: start;
 }
 
 .input-field label,
@@ -47,44 +50,45 @@ body {
 }
 
 .input-field input {
-    padding: 8px;
-    border: 1px solid black;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .option-field select {
-    width: 65%;
-    padding: 8px;
-    border: 1px solid black;
+    width: 100%;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 button {
     background-color: rgb(58, 176, 235);
     color: white;
-
+    font-size: 1em;
     border: none;
-    border-radius: 20px;
-
+    border-radius: 1.5em;
     padding: 0.75em 3em;
 
     cursor: pointer;
+
+    transition: background-color 0.25s ease-in-out;
 }
 
 button:hover {
-    background-color: rgb(91, 195, 246);
+    background-color: rgb(90, 200, 255);
 }
 
 .overlay {
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 
     position: fixed;
     top: 0;
     left: 0;
 
-    background-color: rgba(0, 0, 0, 0.5);
-
     display: none;
-
     justify-content: center;
     align-items: flex-start;
 }
@@ -95,32 +99,22 @@ button:hover {
 
 #modal-box {
     width: 400px;
-
     background: white;
-
     border: 1px solid black;
     border-radius: 1em;
-
     padding: 1.5em;
-
     display: flex;
     flex-direction: column;
-
     gap: 1em;
-
     position: relative;
-
     top: 30px;
 }
 
 #closeBtn {
     background: none;
     color: black;
-
     padding: 0;
-
     border: none;
-
     position: absolute;
     top: 12px;
     right: 16px;
@@ -131,7 +125,14 @@ button:hover {
     font-weight: normal;
 }
 
-.ok-wrap {
+.width-to-keep {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75em 0;
+    font-size: 1.1em;
+}
+
+.ok {
     display: flex;
     justify-content: center;
     margin-top: 10px;
