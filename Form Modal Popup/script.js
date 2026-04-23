@@ -2,7 +2,7 @@ const openBtn = document.getElementById('openBtn');
 const closeBtn = document.getElementById('closeBtn');
 
 const productId = document.getElementById('productId');
-const productName = document.getElementById('name'); // fix: 'name' shadows window.name
+const productName = document.getElementById('name');
 const price = document.getElementById('price');
 const city = document.getElementById('city');
 
@@ -28,16 +28,20 @@ function closeModal() {
     modal.classList.remove('show');
 }
 
+// 1st way
 closeBtn.addEventListener('click', closeModal);
 
+// 2nd way
 okBtn.addEventListener('click', closeModal);
 
+// 3rd way
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         closeModal();
     }
 });
 
+// 4th way
 modal.addEventListener('click', (event) => {
     if (event.target === modal) {
         closeModal();
